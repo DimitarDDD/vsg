@@ -1,0 +1,32 @@
+            body {
+            background-image: url("https://img.freepik.com/free-vector/gradient-landscape-with-torii-gate-water_23-2148660095.jpg?w=996&t=st=1674408830~exp=1674409430~hmac=41f20deee63acd14a6ab9bc16abb781e6dbba75eaba64b1295ceff8d5acee999");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        nav {
+            background-color: rgb(60, 27, 65)
+        }
+        
+        .nav-link {
+            color: grey;
+        }
+        
+        .nav-link:hover {
+            color: #fff;
+        }
+        
+        .navbar-brand {
+            color: grey;
+        }
+        
+        .navbar-brand:hover {
+            color: #fff;
+        }
+        
+        .btn.btn-primary {
+            background-color: rgb(60, 27, 65)
+        }
+        
+        .btn.btn-primary:hover {
+            background-color: rgb(83, 38, 90)

@@ -1,0 +1,57 @@
+{% extends 'jikan/base.html' %}
+{% load static %} 
+{% load compress %}
+{% block content %}  
+{% compress css %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/index.css' %}"> 
+{% endcompress %}
+<div class="row height d-flex justify-content-center align-items-center"> 
+    <div class="col-md-6 justify-content-center align-items-center">
+        <h2>Search your anime</h2>
+        <form class="form-row" action="{% url 'search_anime' %}">
+        <div class="form "> 
+                <input type="text" class="form-control" name="q" placeholder="Search a anime">
+                <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        </form>
+    </div>
+    <br>
+    <div class="row">
+       
+    </div>
+      {% if user.is_authenticated %}  
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{{ z.data.images.jpg.small_image_url }}" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ z.data.title }}</h5>
+              <p class="card-text">Stared/Ended: {{z.data.aired.string}}</p>
+              <p class="card-text">Hyperlink: <small class="text-muted">{{ z.data.url }}</small></p> 
+              <p class="card-text">Episodes: <small class="text-muted">{{ z.data.episodes }}</small></p> 
+              <p class="card-text">Can be seen on: <small class="text-muted">{{ z.data.type }}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% else %}   
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{{ z.data.images.jpg.small_image_url }}" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ z.data.title }}</h5> 
+              <p class="card-text">Sign in to get the full info</p>
+
+            </div>
+          </div>
+        </div> 
+      </div>
+      
+      {% endif %}  
+</div>
+{% endblock %}

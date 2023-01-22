@@ -1,0 +1,23 @@
+{% extends 'jikan/base.html' %}
+
+{% block content %}   
+{% load compress %}
+{% load static %}  
+{% compress css %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/home.css' %}"> 
+{% endcompress %}
+<div class="row height d-flex justify-content-center align-items-center"> 
+    <div class="col-md-6 justify-content-center align-items-center">
+        <h2>Search yor anime character</h2>
+        <form class="form-row" action="{% url 'search_anime' %}">
+        <div class="form "> 
+                <input type="text" class="form-control" name="q" placeholder="Search a anime, type a number">
+                <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+<hr>
+</div> 
+
+{% endblock %}
